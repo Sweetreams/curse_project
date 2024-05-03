@@ -1,5 +1,6 @@
-import { Flex, Layout, Typography, theme } from 'antd'
+import { Layout, Typography, theme } from 'antd'
 import React from 'react'
+import imgProfile from '../../assets/profile-svgrepo-com.svg'
 
 const LayoutHeader = () => {
 
