@@ -8,8 +8,9 @@ const LayoutHeader = () => {
     } = theme.useToken();
 
     return (
-        <Layout.Header style={{ padding: 0, background: colorBgContainer }}>
-            <Typography.Title level={5}>Администратор</Typography.Title>
+        <Layout.Header style={{ paddingRight: 25, background: colorBgContainer, display: 'flex', justifyContent: 'end', alignItems: 'center',  }}>
+            <img width={25} src="/src/assets/profile-svgrepo-com.svg" alt="safsa" />
+            <Typography.Text>Администратор</Typography.Text>
         </Layout.Header>
     )
 }

@@ -14,16 +14,16 @@ export const items = [
     getItem(<Link to='financialManager/Payments'>{'Оплаты'}</Link>, '4', <TableOutlined/>),
     getItem(<Link to='financialManager/Report'>{'Отчёт по позициям'}</Link>, '5', <CheckCircleOutlined/>),
   ]),
-    getItem('Управление кадрами', '6', <FolderOutlined/>),
+  getItem(<Link to='personneldepartment'>{'Управление кадрами'}</Link>, '6', <FolderOutlined/>),
   getItem('Бюджетирование и казнайчество', '7', <FolderOutlined/>, [
-    getItem('Финансовое планирование', '8', <PlusCircleOutlined/>),
-    getItem('Затраты и доходы', '9', <TableOutlined/>),
-    getItem('Отчёт о доходах и расходов', '10', <CheckCircleOutlined/>),
+    getItem(<Link to='budgeting/financialPlanning'>{'Финансовое планирование'}</Link>, '8', <PlusCircleOutlined/>),
+    getItem(<Link to='budgeting/expensesIncome'>{'Расходы и доходы'}</Link>, '9', <TableOutlined/>),
+    getItem(<Link to='budgeting/eIStatement'>{'Отчёт о доходах и расходов'}</Link>, '10', <CheckCircleOutlined/>),
   ]),
   getItem('Технические', '11', <FolderOutlined/>, [
-    getItem('Движение по складу', '12', <PlusCircleOutlined/>),
-    getItem('Статусы заказа', '13', <PlusCircleOutlined/>),
-    getItem('Типы операций', '14', <TableOutlined/>),
+    getItem(<Link to='techical/warehouse'>{'Движение по складу'}</Link>, '12', <PlusCircleOutlined/>),
+    getItem(<Link to='techical/orderStatus'>{'Статусы заказа'}</Link>, '13', <PlusCircleOutlined/>),
+    getItem(<Link to='techical/typesOfOperations'>{'Типы операций'}</Link>, '14', <TableOutlined/>),
   ]),
 ];
 

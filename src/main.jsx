@@ -7,6 +7,13 @@ import FinOrderPages from './Components/Pages/FinOrderPages.jsx'
 import FinAccountsPages from './Components/Pages/FinAccountsPages.jsx'
 import FinPaymentsPages from './Components/Pages/FinPaymentsPages.jsx'
 import FinReportPages from './Components/Pages/FinReportPages.jsx'
+import PersonnelDepartment from './Components/Pages/PersonnelDepartment.jsx'
+import BudExpensesandIncome from './Components/Pages/BudExpensesandIncome.jsx'
+import BudFinancialPlanning from './Components/Pages/BudFinancialPlanning.jsx'
+import BudIncomeandExpenseStatement from './Components/Pages/BudIncomeandExpenseStatement.jsx'
+import TecOrderStatus from './Components/Pages/TecOrderStatus.jsx'
+import TecTypesOfOperations from './Components/Pages/TecTypesOfOperations.jsx'
+import TecWarehouse from './Components/Pages/TecWarehouse.jsx'
 
 const router = createBrowserRouter([
   {
@@ -28,6 +35,34 @@ const router = createBrowserRouter([
       {
         path: 'financialManager/Report',
         element: <FinReportPages/>,
+      },
+      {
+        path: 'personneldepartment',
+        element: <PersonnelDepartment/>
+      },
+      {
+        path: 'budgeting/financialPlanning',
+        element: <BudFinancialPlanning/>
+      },
+      {
+        path: 'budgeting/expensesIncome',
+        element: <BudExpensesandIncome/>
+      },
+      {
+        path: 'budgeting/eIStatement',
+        element: <BudIncomeandExpenseStatement/>
+      },
+      {
+        path: 'techical/warehouse',
+        element: <TecWarehouse/>
+      },
+      {
+        path: 'techical/orderStatus',
+        element: <TecOrderStatus/>
+      },
+      {
+        path: 'techical/typesOfOperations',
+        element: <TecTypesOfOperations/>
       },
     ],
   },
