@@ -9,7 +9,7 @@ const LayoutHeader = () => {
 
     return (
         <Layout.Header style={{ paddingRight: 25, background: colorBgContainer, display: 'flex', justifyContent: 'end', alignItems: 'center',  }}>
-            <img width={25} src="/src/assets/profile-svgrepo-com.svg" alt="safsa" />
+            <img width={25} src={"/src/assets/profile-svgrepo-com.svg"} alt="safsa" />
             <Typography.Text>Администратор</Typography.Text>
         </Layout.Header>
     )

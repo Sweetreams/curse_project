@@ -6,7 +6,7 @@ const LayoutSider = () => {
     return (
         <Layout.Sider >
             <div className="demo-logo-vertical" style={{display: 'flex', justifyContent:'center', paddingTop: 10}}>
-                <img src="/src/assets/logo.svg" alt="sad" />
+                <img src={"/src/assets/logo.svg"} alt="sad" />
             </div>
             <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" items={items} />
         </Layout.Sider>
