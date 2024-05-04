@@ -80,6 +80,80 @@ export const dataSourceAccount = [
   },
 ];
 
+export const dataSourcePayments = [
+  {
+    key: '1',
+    id: '1',
+    date: '11.11.21',
+    order: 'Заказ №3',
+    buyer: 'Григорий Распутин',
+    invamount: 195170.43,
+  },
+  {
+    key: '2',
+    id: '2',
+    date: '11.12.23',
+    order: 'Заказ №2',
+    buyer: 'Августин',
+    invamount: 1231230.43,
+  },
+  {
+    key: '3',
+    id: '3',
+    date: '11.11.24',
+    order: 'Заказ №10',
+    buyer: 'Августин',
+    invamount: 1245234.43,
+  },
+  {
+    key: '4',
+    id: '4',
+    date: '23.12.23',
+    order: 'Заказ №1',
+    buyer: 'Кайзер Григорий',
+    invamount: 123000.00,
+  },
+  {
+    key: '5',
+    id: '5',
+    date: '11.11.21',
+    order: 'Заказ №6',
+    buyer: 'Григорий Распутин',
+    invamount: 195000.00,
+  },
+];
+
+export const dataSourceReport = [
+  {
+    key: '1',
+    id: '1',
+    order: 'GANSOR-1301880',
+    buyer: '12 шт',
+    invamount: 239000,
+  },
+  {
+    key: '1',
+    id: '1',
+    order: 'HP ProDesk 400 G7 MT',
+    buyer: '10 шт',
+    invamount: 1230000,
+  },
+  {
+    key: '1',
+    id: '1',
+    order: 'Lenovo IdeaCentre 3 07ADA05',
+    buyer: '74 шт',
+    invamount: 1790000,
+  },
+  {
+    key: '1',
+    id: '1',
+    order: 'DELL Vostro 3681 SFF',
+    buyer: '30 шт',
+    invamount: 499599,
+  },
+];
+
 export const columnsAccount =[
   {
     title: 'id',
@@ -115,5 +189,56 @@ export const columnsAccount =[
   title: 'Отгружен',
   dataIndex: 'shipped',
   key: 'shipped',
+  },
+]
+
+export const columnsPayments =[
+  {
+    title: 'id',
+    dataIndex: 'id',
+    key: 'id',
+  },
+  {
+    title: 'Дата',
+    dataIndex: 'date',
+    key: 'date',
+  },
+  {
+    title: 'Номер заказа',
+    dataIndex: 'order',
+    key: 'order',
+  },
+  {
+    title: 'Покупатель',
+    dataIndex: 'buyer',
+    key: 'buyer',
+  },
+  {
+    title: 'Сумма счёта, р.',
+    dataIndex: 'invamount',
+    key: 'invamount',
+  },
+]
+
+export const columnsReport =[
+  {
+    title: 'id',
+    dataIndex: 'id',
+    key: 'id',
+  },
+  {
+    title: 'Позиция',
+    dataIndex: 'order',
+    key: 'order',
+  },
+  {
+    title: 'Количество, шт',
+    dataIndex: 'buyer',
+    key: 'buyer',
+  },
+  {
+    title: 'Сумма, р.',
+    dataIndex: 'invamount',
+    key: 'invamount',
   },
 ]
