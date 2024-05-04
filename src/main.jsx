@@ -14,12 +14,17 @@ import BudIncomeandExpenseStatement from './Components/Pages/BudIncomeandExpense
 import TecOrderStatus from './Components/Pages/TecOrderStatus.jsx'
 import TecTypesOfOperations from './Components/Pages/TecTypesOfOperations.jsx'
 import TecWarehouse from './Components/Pages/TecWarehouse.jsx'
+import MainPages from './Components/Pages/MainPages.jsx'
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App/>,
     children: [
+      {
+        path: 'mainpage',
+        element: <MainPages/>,
+      },
       {
         path: 'financialManager/Orders',
         element: <FinOrderPages/>,
