@@ -9,8 +9,8 @@ const finReportPAges = () => {
 return (
     <>
         <Breadcrumb style={{ margin: '16px 0' }}>
-            <Breadcrumb.Item>User</Breadcrumb.Item>
-            <Breadcrumb.Item>Bill</Breadcrumb.Item>
+            <Breadcrumb.Item>Управление финансами</Breadcrumb.Item>
+            <Breadcrumb.Item>Отчёт по позициям</Breadcrumb.Item>
         </Breadcrumb>
         <div style={{ padding: 24, minHeight: 360, background: colorBgContainer, borderRadius: borderRadiusLG }}>
             Report

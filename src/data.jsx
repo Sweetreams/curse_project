@@ -37,10 +37,50 @@ export const dataSourceAccount = [
     buyer: 'Григорий Распутин',
     invamount: 195170.43,
     shipped: '-',
-  }
+  },
+  {
+    key: '2',
+    id: '2',
+    date: '11.12.23',
+    account: 5,
+    order: 'Заказ №2',
+    buyer: 'Августин',
+    invamount: 1231230.43,
+    shipped: '✓',
+  },
+  {
+    key: '3',
+    id: '3',
+    date: '11.11.24',
+    account: 5,
+    order: 'Заказ №10',
+    buyer: 'Августин',
+    invamount: 1245234.43,
+    shipped: '-',
+  },
+  {
+    key: '4',
+    id: '4',
+    date: '23.12.23',
+    account: 3,
+    order: 'Заказ №1',
+    buyer: 'Кайзер Григорий',
+    invamount: 123000.00,
+    shipped: '-',
+  },
+  {
+    key: '5',
+    id: '5',
+    date: '11.11.21',
+    account: 3,
+    order: 'Заказ №6',
+    buyer: 'Григорий Распутин',
+    invamount: 195000.00,
+    shipped: '✓',
+  },
 ];
 
-export const columns =[
+export const columnsAccount =[
   {
     title: 'id',
     dataIndex: 'id',
