@@ -31,7 +31,7 @@ export const dataSourceAccount = [
   {
     key: '1',
     id: '1',
-    date: '11.11.21',
+    date: '11.11.2021',
     account: 3,
     order: 'Заказ №3',
     buyer: 'Григорий Распутин',
@@ -41,7 +41,7 @@ export const dataSourceAccount = [
   {
     key: '2',
     id: '2',
-    date: '11.12.23',
+    date: '11.12.2023',
     account: 5,
     order: 'Заказ №2',
     buyer: 'Августин',
@@ -51,7 +51,7 @@ export const dataSourceAccount = [
   {
     key: '3',
     id: '3',
-    date: '11.11.24',
+    date: '11.11.2024',
     account: 5,
     order: 'Заказ №10',
     buyer: 'Августин',
@@ -61,7 +61,7 @@ export const dataSourceAccount = [
   {
     key: '4',
     id: '4',
-    date: '23.12.23',
+    date: '23.12.2023',
     account: 3,
     order: 'Заказ №1',
     buyer: 'Кайзер Григорий',
@@ -71,7 +71,7 @@ export const dataSourceAccount = [
   {
     key: '5',
     id: '5',
-    date: '11.11.21',
+    date: '11.11.2021',
     account: 3,
     order: 'Заказ №6',
     buyer: 'Григорий Распутин',
@@ -84,7 +84,7 @@ export const dataSourcePayments = [
   {
     key: '1',
     id: '1',
-    date: '11.11.21',
+    date: '11.11.2021',
     order: 'Заказ №3',
     buyer: 'Григорий Распутин',
     invamount: 195170.43,
@@ -92,7 +92,7 @@ export const dataSourcePayments = [
   {
     key: '2',
     id: '2',
-    date: '11.12.23',
+    date: '11.12.2023',
     order: 'Заказ №2',
     buyer: 'Августин',
     invamount: 1231230.43,
@@ -100,7 +100,7 @@ export const dataSourcePayments = [
   {
     key: '3',
     id: '3',
-    date: '11.11.24',
+    date: '11.11.2024',
     order: 'Заказ №10',
     buyer: 'Августин',
     invamount: 1245234.43,
@@ -108,7 +108,7 @@ export const dataSourcePayments = [
   {
     key: '4',
     id: '4',
-    date: '23.12.23',
+    date: '23.12.2023',
     order: 'Заказ №1',
     buyer: 'Кайзер Григорий',
     invamount: 123000.00,
@@ -116,7 +116,7 @@ export const dataSourcePayments = [
   {
     key: '5',
     id: '5',
-    date: '11.11.21',
+    date: '11.11.2021',
     order: 'Заказ №6',
     buyer: 'Григорий Распутин',
     invamount: 195000.00,
@@ -132,25 +132,83 @@ export const dataSourceReport = [
     invamount: 239000,
   },
   {
-    key: '1',
-    id: '1',
+    key: '2',
+    id: '2',
     order: 'HP ProDesk 400 G7 MT',
     buyer: '10 шт',
     invamount: 1230000,
   },
   {
-    key: '1',
-    id: '1',
+    key: '3',
+    id: '3',
     order: 'Lenovo IdeaCentre 3 07ADA05',
     buyer: '74 шт',
     invamount: 1790000,
   },
   {
-    key: '1',
-    id: '1',
+    key: '4',
+    id: '4',
     order: 'DELL Vostro 3681 SFF',
     buyer: '30 шт',
     invamount: 499599,
+  },
+];
+
+export const dataSourcePersonnelD = [
+  {
+    key: '1',
+    id: '1',
+    fcs: 'Иванов Иван Иванович',
+    position: 'Руководитель отдела продаж',
+    department: 'Отдел продаж	',
+    dof: '01.01.1980',
+    gender: 'Муж',
+    telefon: '+7 (999) 999-99-99',
+    salar: '100 000',
+  },
+  {
+    key: '2',
+    id: '2',
+    fcs: 'Петрова Анна Петровна',
+    position: 'Бухгалтерия',
+    department: 'Бухгалтерия',
+    dof: '02.02.1990',
+    gender: 'Жен',
+    telefon: '+7 (888) 888-88-88',
+    salar: '50 000',
+  },
+  {
+    key: '3',
+    id: '3',
+    fcs: 'Сидоров Сергей Сергеевич',
+    position: 'Менеджер по продажам',
+    department: 'Отдел продаж',
+    dof: '03.03.1995',
+    gender: 'Муж',
+    telefon: '+7 (777) 777-77-77',
+    salar: '70 000',
+  },
+  {
+    key: '4',
+    id: '4',
+    fcs: 'Кузнецова Екатерина Евгеньевна',
+    position: 'Менеджер по закупкам',
+    department: 'Отдел закупок',
+    dof: '04.04.1992',
+    gender: 'Жен',
+    telefon: '+7 (666) 666-66-66',
+    salar: '60 000',
+  },
+  {
+    key: '5',
+    id: '5',
+    fcs: 'Васильев Василий Васильевич',
+    position: 'Водитель',
+    department: 'Транспортный отдел',
+    dof: '05.05.1975',
+    gender: 'Муж',
+    telefon: '+7 (555) 555-55-55',
+    salar: '40 000',
   },
 ];
 
@@ -171,7 +229,7 @@ export const columnsAccount =[
     key: 'account',
   },
   {
-    title: 'Заказ',
+    title: 'Номер заказа',
     dataIndex: 'order',
     key: 'order',
   },
@@ -240,5 +298,48 @@ export const columnsReport =[
     title: 'Сумма, р.',
     dataIndex: 'invamount',
     key: 'invamount',
+  },
+]
+
+export const columnsPersonnelD =[
+  {
+    title: 'id',
+    dataIndex: 'id',
+    key: 'id',
+  },
+  {
+    title: 'ФИО',
+    dataIndex: 'fcs',
+    key: 'fcs',
+  },
+  {
+    title: 'Должность',
+    dataIndex: 'position',
+    key: 'position',
+  },
+  {
+    title: 'Отдел',
+    dataIndex: 'department',
+    key: 'department',
+  },
+  {
+    title: 'Дата рождения',
+    dataIndex: 'dof',
+    key: 'dof',
+  },
+  {
+    title: 'Пол',
+    dataIndex: 'gender',
+    key: 'gender',
+  },
+  {
+    title: 'Телефон',
+    dataIndex: 'telefon',
+    key: 'telefon',
+  },
+  {
+    title: 'Зарплата',
+    dataIndex: 'salar',
+    key: 'salar',
   },
 ]

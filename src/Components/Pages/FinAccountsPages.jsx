@@ -1,6 +1,7 @@
 import { Breadcrumb, theme, Table, Space, Typography, Button, Modal, Form, Input, Checkbox, DatePicker } from 'antd';
-import React, { useState } from 'react'
-import { columnsAccount, dataSourceAccount } from '../../data';
+import React, { useEffect, useState } from 'react'
+import { columnsAccount, dataSourceAccount, dataSourcePayments } from '../../data';
+import { useNavigate } from 'react-router-dom';
 
 const finAccountsPages = () => {
     const [open, setOpen] = useState(false)
@@ -24,21 +25,24 @@ const finAccountsPages = () => {
     }
 
     const handleOk = (values) => {
+
+    }
+
+    const onFinish = (values) => {
         console.log(values)
         dataSourceAccount.push(
             {
                 'key': (dataSourceAccount.length + 1).toString(),
                 'id': (dataSourceAccount.length + 1).toString(),
-                'account': 4,
-                'buyer': 'Михаил',
-                'date': '11.12.2024',
-                'invamount': 120000,
-                'order': 'Заказ №23',
+                'account': values.chet,
+                'buyer': values.pokyp,
+                'date': values.data.$D + '.' + values.data.$M + '.' + values.data.$y,
+                'invamount': values.symma,
+                'order': 'Заказ №' + values.zakaz,
                 'shipped': '✓'
 
             }
         )
-        //console.log(values)
         setOpen(false)
     }
 
@@ -57,11 +61,20 @@ const finAccountsPages = () => {
                     <Typography.Title level={2}>Счета</Typography.Title>
                     <Button type='primary' onClick={openModalMenu}>Добавить поле</Button>
                 </Space>
-
+                <div style={{ padding: 24, marginBottom: 40, background: '#f0f0f0', borderRadius: borderRadiusLG }}>
+                    <Typography.Text>Счета содержат в себе информацию о финансовых операциях компании. Они включают в себя следующие данные:<br /></Typography.Text>
+                    <Typography.Text> <strong>— ID</strong> — уникальный идентификатор счета.<br /></Typography.Text>
+                    <Typography.Text> <strong>— Дата</strong> — дата выставления счета.<br /></Typography.Text>
+                    <Typography.Text> <strong>— Номер счёта</strong> — номер счета, присвоенный в системе.<br /></Typography.Text>
+                    <Typography.Text> <strong>— Номер заказа</strong> — номер заказа, связанного со счетом. <br /></Typography.Text>
+                    <Typography.Text> <strong>— Покупатель</strong> — наименование покупателя по счету. <br /></Typography.Text>
+                    <Typography.Text> <strong>— Сумма счёта</strong> — сумма счета. <br /></Typography.Text>
+                    <Typography.Text> <strong>— Отгружен</strong> — статус отгрузки товара по счету. <br /></Typography.Text>
+                </div>
                 <Table dataSource={dataSourceAccount} columns={columnsAccount}></Table>
             </div>
             <Modal title='Оформление нового счёта' open={open} onOk={handleOk} onCancel={handleCancel}>
-                <Form {...layout} form={form} name='control-hooks' onFinish={handleOk}>
+                <Form {...layout} form={form} name='control-hooks' onFinish={onFinish}>
                     <Form.Item name="data" label="Дата" rules={[{ required: true }]}>
                         <DatePicker placeholder='Выбор даты' />
                     </Form.Item>
@@ -79,6 +92,9 @@ const finAccountsPages = () => {
                     </Form.Item>
                     <Form.Item name="otgruz" label="Отгружен">
                         <Checkbox />
+                    </Form.Item>
+                    <Form.Item>
+                        <Button type='primary' htmlType='submit'>asfs</Button>
                     </Form.Item>
                 </Form>
             </Modal>

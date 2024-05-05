@@ -18,7 +18,7 @@ const FinOrderPages = () => {
                     <Typography.Title level={2}>Заказы</Typography.Title>
                 </Space>
                 <div style={{ padding: 24, marginBottom: 40, background: '#f0f0f0', borderRadius: borderRadiusLG }}>
-                    <Typography.Text>Возможности системы управления финансов для их учёта.<br /></Typography.Text>
+                    <Typography.Text>Управление финансами - Возможности системы управления финансов для их учёта.<br /></Typography.Text>
                     <Typography.Text> <strong>— Заказы:</strong> возможноность создавать заказы, привязанные к Клиенту.<br /></Typography.Text>
                     <Typography.Text> <strong>— Счета:</strong> Счета доступные для Заказчиков<br /></Typography.Text>
                     <Typography.Text> <strong>— Оплаты:</strong> простая форма учета оплат. <br /></Typography.Text>
