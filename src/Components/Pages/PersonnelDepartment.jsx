@@ -2,6 +2,7 @@ import { Breadcrumb, theme, Table, Space, Typography, Button, Modal, Form, Input
 import React, { useState } from 'react'
 import { columnsPersonnelD, dataSourcePersonnelD } from '../../data';
 import { genderVerif } from '../unitls';
+import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from 'recharts';
 
 const PersonnelDepartment = () => {
 
@@ -29,7 +30,7 @@ const PersonnelDepartment = () => {
 
   }
 
-  
+
 
   const onFinish = (values) => {
     console.log(values)

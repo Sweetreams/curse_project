@@ -1,29 +1,29 @@
 import {
-    PlusCircleOutlined,
-    FolderOutlined,
-    CheckCircleOutlined,
-    TableOutlined,
-  } from '@ant-design/icons';
+  PlusCircleOutlined,
+  FolderOutlined,
+  CheckCircleOutlined,
+  TableOutlined,
+} from '@ant-design/icons';
 import { getItem } from "./Components/unitls";
 import { Link } from 'react-router-dom';
 
 export const items = [
-  getItem('Управление финансами', '1', <FolderOutlined/>, [
-    getItem(<Link to='financialManager/Orders'>{'Заказы'}</Link>, '2', <PlusCircleOutlined/>),
-    getItem(<Link to='financialManager/Accounts'>{'Счёта'}</Link>, '3', <PlusCircleOutlined/>),
-    getItem(<Link to='financialManager/Payments'>{'Оплаты'}</Link>, '4', <TableOutlined/>),
-    getItem(<Link to='financialManager/Report'>{'Отчёт по позициям'}</Link>, '5', <CheckCircleOutlined/>),
+  getItem('Управление финансами', '1', <FolderOutlined />, [
+    getItem(<Link to='financialManager/Orders'>{'Заказы'}</Link>, '2', <PlusCircleOutlined />),
+    getItem(<Link to='financialManager/Accounts'>{'Счёта'}</Link>, '3', <PlusCircleOutlined />),
+    getItem(<Link to='financialManager/Payments'>{'Оплаты'}</Link>, '4', <TableOutlined />),
+    getItem(<Link to='financialManager/Report'>{'Отчёт по позициям'}</Link>, '5', <CheckCircleOutlined />),
   ]),
-  getItem(<Link to='personneldepartment'>{'Управление кадрами'}</Link>, '6', <FolderOutlined/>),
-  getItem('Бюджетирование и казнайчество', '7', <FolderOutlined/>, [
-    getItem(<Link to='budgeting/financialPlanning'>{'Финансовое планирование'}</Link>, '8', <PlusCircleOutlined/>),
-    getItem(<Link to='budgeting/expensesIncome'>{'Расходы и доходы'}</Link>, '9', <TableOutlined/>),
-    getItem(<Link to='budgeting/eIStatement'>{'Отчёт о доходах и расходов'}</Link>, '10', <CheckCircleOutlined/>),
+  getItem(<Link to='personneldepartment'>{'Управление кадрами'}</Link>, '6', <FolderOutlined />),
+  getItem('Бюджетирование и казнайчество', '7', <FolderOutlined />, [
+    getItem(<Link to='budgeting/financialPlanning'>{'Финансовое планирование'}</Link>, '8', <PlusCircleOutlined />),
+    getItem(<Link to='budgeting/expensesIncome'>{'Расходы и доходы'}</Link>, '9', <TableOutlined />),
+    getItem(<Link to='budgeting/eIStatement'>{'Отчёт о доходах и расходов'}</Link>, '10', <CheckCircleOutlined />),
   ]),
-  getItem('Технические', '11', <FolderOutlined/>, [
-    getItem(<Link to='techical/warehouse'>{'Движение по складу'}</Link>, '12', <PlusCircleOutlined/>),
-    getItem(<Link to='techical/orderStatus'>{'Статусы заказа'}</Link>, '13', <PlusCircleOutlined/>),
-    getItem(<Link to='techical/typesOfOperations'>{'Типы операций'}</Link>, '14', <TableOutlined/>),
+  getItem('Технические', '11', <FolderOutlined />, [
+    getItem(<Link to='techical/warehouse'>{'Движение по складу'}</Link>, '12', <PlusCircleOutlined />),
+    getItem(<Link to='techical/orderStatus'>{'Статусы заказа'}</Link>, '13', <PlusCircleOutlined />),
+    getItem(<Link to='techical/typesOfOperations'>{'Типы операций'}</Link>, '14', <TableOutlined />),
   ]),
 ];
 
@@ -154,6 +154,252 @@ export const dataSourceReport = [
   },
 ];
 
+export const dataSourceTecStat = [
+  {
+    key: '1',
+    id: '1',
+    tz: 'Открыт'
+  },
+  {
+    key: '2',
+    id: '2',
+    tz: 'Выполнен'
+  },
+  {
+    key: '3',
+    id: '3',
+    tz: 'Аннулирован'
+  },
+  {
+    key: '4',
+    id: '4',
+    tz: 'Все отгружено'
+  },
+  {
+    key: '5',
+    id: '5',
+    tz: 'Обработан'
+  },
+];
+
+export const dataSourceTecTypes = [
+  {
+    key: '1',
+    id: '1',
+    typeoperation: 'Приход'
+  },
+  {
+    key: '2',
+    id: '2',
+    typeoperation: 'Продажа'
+  },
+  {
+    key: '3',
+    id: '3',
+    typeoperation: 'Корректировка'
+  },
+];
+
+export const dataSourceFinPlanning = [
+  {
+    key: '1',
+    id: '1',
+    statiya: 'Закупка сырья',
+    symma: '100 000',
+    date: '01.01.2024',
+    period: 'Месяц',
+    comment: 'Приобретены материалы для производства',
+    typeoperation: 'Расход',
+    prognoz: '500 000',
+    fact: '100 000',
+  },
+  {
+    key: '2',
+    id: '2',
+    statiya: 'Заработная плата',
+    symma: '25 000',
+    date: '15.01.2024',
+    period: 'Месяц',
+    comment: 'Выплачена зарплата сотрудникам',
+    typeoperation: 'Расход',
+    prognoz: '100 000',
+    fact: '25 000',
+  },
+  {
+    key: '3',
+    id: '3',
+    statiya: 'Аренда помещения',
+    symma: '15 000',
+    date: '20.01.2024',
+    period: 'Месяц',
+    comment: 'Оплачена аренда помещения',
+    typeoperation: 'Расход',
+    prognoz: '60 000',
+    fact: '15 000',
+  },
+  {
+    key: '4',
+    id: '4',
+    statiya: 'Закупка сырья',
+    symma: '100 000',
+    date: '01.01.2024',
+    period: 'Месяц',
+    comment: 'Приобретены материалы для производства',
+    typeoperation: 'Расход',
+    prognoz: '500 000',
+    fact: '100 000',
+  },
+  {
+    key: '5',
+    id: '5',
+    statiya: 'Рекламная кампания',
+    symma: '10 000',
+    date: '30.01.2024',
+    period: 'Месяц',
+    comment: 'Запущена рекламная кампания в социальных',
+    typeoperation: 'Расход',
+    prognoz: '30 000',
+    fact: '10 000',
+  },
+  {
+    key: '6',
+    id: '6',
+    statiya: 'Поступления от клиентов',
+    symma: '50 000',
+    date: '10.02.2024',
+    period: 'Месяц',
+    comment: 'Получены платежи от клиентов за товары или услуги',
+    typeoperation: 'Доход',
+    prognoz: '200 000',
+    fact: '50 000',
+  },
+  {
+    key: '7',
+    id: '7',
+    statiya: 'Продажа товаров',
+    symma: '100 000',
+    date: '31.03.2024',
+    period: 'Месяц',
+    comment: 'Проданы товары клиентам',
+    typeoperation: 'Доход',
+    prognoz: '200 000',
+    fact: '100 000',
+  },
+  {
+    key: '8',
+    id: '8',
+    statiya: 'Покупка оборудования',
+    symma: '50 000',
+    date: '01.03.2024',
+    period: 'Квартал',
+    comment: 'Приобретено оборудование для производства',
+    typeoperation: 'Расход',
+    prognoz: '100 000',
+    fact: '50 000',
+  },
+];
+
+export const dataSourceExpenseIncome = [
+  {
+    key: '1',
+    id: '1',
+    date: '01.01.2024',
+    statiya: 'Заработная плата сотрудников',
+    symma: -100000,
+    comment: 'Выплачена заработная плата сотрудникам за декабрь 2023 года',
+  },
+  {
+    key: '2',
+    id: '2',
+    date: '05.01.2024',
+    statiya: 'Аренда помещения',
+    symma: -50000,
+    comment: 'Оплачена аренда помещения за январь 2024 года',
+  },
+  {
+    key: '3',
+    id: '3',
+    date: '20.01.2024',
+    statiya: 'Налоги и сборы',
+    symma: -25000,
+    comment: 'Уплачены налоги и сборы за декабрь 2023 года',
+  },
+  {
+    key: '4',
+    id: '4',
+    date: '31.03.2024',
+    statiya: 'Продажа товаров',
+    symma: 100000,
+    comment: 'Проданы товары клиентам',
+  },
+  {
+    key: '5',
+    id: '5',
+    date: '10.02.2024',
+    statiya: 'Поступления от клиентов',
+    symma: 50000,
+    comment: 'Получены платежи от клиентов за товары или услуги',
+  },
+  
+];
+
+export const dataSourceTecWare = [
+  {
+    key: '1',
+    id: '1',
+    date: '13.04.2023',
+    position: 'GANSOR-1301880',
+    typeoperation: 'Продажа',
+    kol: '12 шт.',
+    operation: '-2',
+  },
+  {
+    key: '2',
+    id: '2',
+    date: '20.10.2023',
+    position: 'HP ProDesk 400 G7 MT',
+    typeoperation: 'Корректировка',
+    kol: '230 шт.',
+    operation: '320',
+  },
+  {
+    key: '3',
+    id: '3',
+    date: '13.05.2024',
+    position: 'Lenovo IdeaCentre 3 07ADA05',
+    typeoperation: 'Приход',
+    kol: '120 шт.',
+    operation: '0',
+  },
+  {
+    key: '4',
+    id: '4',
+    date: '13.10.2021',
+    position: 'Lenovo V15 IAP',
+    typeoperation: 'Корректировка',
+    kol: '0 шт.',
+    operation: '10',
+  },
+  {
+    key: '5',
+    id: '5',
+    date: '05.05.2021',
+    position: 'Lenovo GeekPro G5000',
+    typeoperation: 'Корректировка',
+    kol: '100 шт.',
+    operation: '120',
+  },
+  {
+    key: '6',
+    id: '6',
+    date: '13.04.2023',
+    position: 'DELL Vostro 3681 SFF',
+    typeoperation: 'Продажа',
+    kol: '76 шт.',
+    operation: '-36',
+  },
+];
+
 export const dataSourcePersonnelD = [
   {
     key: '1',
@@ -212,7 +458,7 @@ export const dataSourcePersonnelD = [
   },
 ];
 
-export const columnsAccount =[
+export const columnsAccount = [
   {
     title: 'id',
     dataIndex: 'id',
@@ -244,13 +490,13 @@ export const columnsAccount =[
     key: 'invamount',
   },
   {
-  title: 'Отгружен',
-  dataIndex: 'shipped',
-  key: 'shipped',
+    title: 'Отгружен',
+    dataIndex: 'shipped',
+    key: 'shipped',
   },
 ]
 
-export const columnsPayments =[
+export const columnsPayments = [
   {
     title: 'id',
     dataIndex: 'id',
@@ -278,7 +524,7 @@ export const columnsPayments =[
   },
 ]
 
-export const columnsReport =[
+export const columnsReport = [
   {
     title: 'id',
     dataIndex: 'id',
@@ -301,7 +547,66 @@ export const columnsReport =[
   },
 ]
 
-export const columnsPersonnelD =[
+export const columnsTecWare = [
+  {
+    title: 'id',
+    dataIndex: 'id',
+    key: 'id',
+  },
+  {
+    title: 'Дата',
+    dataIndex: 'date',
+    key: 'date',
+  },
+  {
+    title: 'Позиция',
+    dataIndex: 'position',
+    key: 'position',
+  },
+  {
+    title: 'Тип операции',
+    dataIndex: 'typeoperation',
+    key: 'typeoperation',
+  },
+  {
+    title: 'Количество, шт.',
+    dataIndex: 'kol',
+    key: 'kol',
+  },
+  {
+    title: 'Остаток после операции',
+    dataIndex: 'operation',
+    key: 'operation',
+  },
+]
+
+export const columnsTecTypes = [
+  {
+    title: 'id',
+    dataIndex: 'id',
+    key: 'id',
+  },
+  {
+    title: 'Тип операции по скаду',
+    dataIndex: 'typeoperation',
+    key: 'typeoperation',
+  }
+]
+
+export const columnsTecStat = [
+  {
+    title: 'id',
+    dataIndex: 'id',
+    key: 'id',
+  },
+  {
+    title: 'Статус заказа',
+    dataIndex: 'tz',
+    key: 'tz',
+  }
+]
+
+export const columnsPersonnelD = [
   {
     title: 'id',
     dataIndex: 'id',
@@ -341,5 +646,81 @@ export const columnsPersonnelD =[
     title: 'Зарплата',
     dataIndex: 'salar',
     key: 'salar',
+  },
+]
+
+export const columnsFinPlanning = [
+  {
+    title: 'id',
+    dataIndex: 'id',
+    key: 'id',
+  },
+  {
+    title: 'Название статьи',
+    dataIndex: 'statiya',
+    key: 'statiya',
+  },
+  {
+    title: 'Сумма, р.',
+    dataIndex: 'symma',
+    key: 'symma',
+  },
+  {
+    title: 'Дата',
+    dataIndex: 'date',
+    key: 'date',
+  },
+  {
+    title: 'Период',
+    dataIndex: 'period',
+    key: 'period',
+  },
+  {
+    title: 'Комментарий',
+    dataIndex: 'comment',
+    key: 'comment',
+  },
+  {
+    title: 'Тип операции',
+    dataIndex: 'typeoperation',
+    key: 'typeoperation',
+  },
+  {
+    title: 'Прогноз, р.',
+    dataIndex: 'prognoz',
+    key: 'prognoz',
+  },
+  {
+    title: 'Факт, р.',
+    dataIndex: 'fact',
+    key: 'fact',
+  },
+]
+
+export const columnsExpenseIncome = [
+  {
+    title: 'id',
+    dataIndex: 'id',
+    key: 'id',
+  },
+  {
+    title: 'Название статьи',
+    dataIndex: 'statiya',
+    key: 'statiya',
+  },
+  {
+    title: 'Сумма, р.',
+    dataIndex: 'symma',
+    key: 'symma',
+  },
+  {
+    title: 'Дата',
+    dataIndex: 'date',
+    key: 'date',
+  },
+  {
+    title: 'Комментарий',
+    dataIndex: 'comment',
+    key: 'comment',
   },
 ]

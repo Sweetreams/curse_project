@@ -14,3 +14,29 @@ export const genderVerif = (values) => {
     return 'Жен'
   }
 }
+
+export const typeOperationVerif = (values) => {
+  if(values === 'doxod'){
+    return 'Доход'
+  } else {
+    return 'Расход'
+  }
+}
+
+export const periodVerif = (values) => {
+  if(values === 'day'){
+    return 'День'
+  }
+  else if(values === 'week'){
+    return 'Неделя' 
+  }
+  else if(values === 'month'){
+    return 'Месяц' 
+  }
+  else if(values === 'quarter'){
+    return 'Квартал'
+  }
+  else{
+    return 'Год'
+  }
+}
