@@ -84,7 +84,7 @@ const finAccountsPages = () => {
                     <Form.Item name="symma" label="Сумма" rules={[{ required: true }]}>
                         <Input placeholder='Сумма счёта' />
                     </Form.Item>
-                    <Form.Item name="otgruz" label="Отгружен" rules={[{ required: true }]}>
+                    <Form.Item name="otgruz" label="Отгружен">
                         <Checkbox />
                     </Form.Item>
                     <Form.Item style={{display: 'flex', justifyContent: 'flex-end'}}>
