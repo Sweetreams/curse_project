@@ -1,7 +1,6 @@
 import { Breadcrumb, theme, Table, Space, Typography, Button, Modal, Form, Input, Checkbox, DatePicker } from 'antd';
-import React, { useEffect, useState } from 'react'
-import { columnsAccount, dataSourceAccount, dataSourcePayments } from '../../data';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from 'react'
+import { columnsAccount, dataSourceAccount} from '../../data';
 
 const finAccountsPages = () => {
     const [open, setOpen] = useState(false)
@@ -24,12 +23,7 @@ const finAccountsPages = () => {
         setOpen(true)
     }
 
-    const handleOk = (values) => {
-
-    }
-
     const onFinish = (values) => {
-        console.log(values)
         dataSourceAccount.push(
             {
                 'key': (dataSourceAccount.length + 1).toString(),
@@ -73,7 +67,7 @@ const finAccountsPages = () => {
                 </div>
                 <Table dataSource={dataSourceAccount} columns={columnsAccount}></Table>
             </div>
-            <Modal title='Оформление нового счёта' open={open} onOk={handleOk} onCancel={handleCancel}>
+            <Modal title='Оформление нового счёта' open={open} onCancel={handleCancel} footer={false}>
                 <Form {...layout} form={form} name='control-hooks' onFinish={onFinish}>
                     <Form.Item name="data" label="Дата" rules={[{ required: true }]}>
                         <DatePicker placeholder='Выбор даты' />
@@ -90,11 +84,11 @@ const finAccountsPages = () => {
                     <Form.Item name="symma" label="Сумма" rules={[{ required: true }]}>
                         <Input placeholder='Сумма счёта' />
                     </Form.Item>
-                    <Form.Item name="otgruz" label="Отгружен">
+                    <Form.Item name="otgruz" label="Отгружен" rules={[{ required: true }]}>
                         <Checkbox />
                     </Form.Item>
-                    <Form.Item>
-                        <Button type='primary' htmlType='submit'>asfs</Button>
+                    <Form.Item style={{display: 'flex', justifyContent: 'flex-end'}}>
+                        <Button type='primary' htmlType='submit'>Добавить</Button>
                     </Form.Item>
                 </Form>
             </Modal>

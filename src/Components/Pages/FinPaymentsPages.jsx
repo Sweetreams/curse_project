@@ -28,10 +28,10 @@ const finPaymentsPages = () => {
             {
                 'key': (dataSourcePayments.length + 1).toString(),
                 'id': (dataSourcePayments.length + 1).toString(),
-                'buyer': 'Михаил',
-                'date': '11.12.2024',
-                'invamount': 120000,
-                'order': 'Заказ №23',
+                'buyer': values.pokyp,
+                'date': values.data.$D + '.' + values.data.$M + '.' + values.data.$y,
+                'invamount': values.symma,
+                'order': 'Заказ № ' + values.zakaz,
             }
         )
         setOpen(false)
@@ -56,13 +56,10 @@ const finPaymentsPages = () => {
                 <Table dataSource={dataSourcePayments} columns={columnsPayments}></Table>
             </div>
 
-            <Modal title='Оформление нового счёта' open={open} onOk={handleOk} onCancel={handleCancel}>
+            <Modal title='Оформление нового счёта' open={open} onOk={handleOk} onCancel={handleCancel} footer={false}>
                 <Form {...layout} form={form} name='control-hooks' onFinish={handleOk}>
                     <Form.Item name="data" label="Дата" rules={[{ required: true }]}>
                         <DatePicker placeholder='Выбор даты' />
-                    </Form.Item>
-                    <Form.Item name="chet" label="Номер счёта" rules={[{ required: true }]}>
-                        <Input placeholder='Номер счёта' />
                     </Form.Item>
                     <Form.Item name="zakaz" label="Номер заказа" rules={[{ required: true }]}>
                         <Input placeholder='Номер заказа' />
@@ -73,8 +70,8 @@ const finPaymentsPages = () => {
                     <Form.Item name="symma" label="Сумма" rules={[{ required: true }]}>
                         <Input placeholder='Сумма счёта' />
                     </Form.Item>
-                    <Form.Item name="otgruz" label="Отгружен">
-                        <Checkbox />
+                    <Form.Item style={{display: 'flex', justifyContent: 'flex-end'}}>
+                        <Button type='primary' htmlType='submit'>Добавить</Button>
                     </Form.Item>
                 </Form>
             </Modal>

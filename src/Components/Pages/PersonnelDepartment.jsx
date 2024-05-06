@@ -2,7 +2,6 @@ import { Breadcrumb, theme, Table, Space, Typography, Button, Modal, Form, Input
 import React, { useState } from 'react'
 import { columnsPersonnelD, dataSourcePersonnelD } from '../../data';
 import { genderVerif } from '../unitls';
-import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from 'recharts';
 
 const PersonnelDepartment = () => {
 
@@ -26,14 +25,7 @@ const PersonnelDepartment = () => {
     setOpen(true)
   }
 
-  const handleOk = (values) => {
-
-  }
-
-
-
   const onFinish = (values) => {
-    console.log(values)
     dataSourcePersonnelD.push(
       {
         'key': (dataSourcePersonnelD.length + 1).toString(),
@@ -76,7 +68,7 @@ const PersonnelDepartment = () => {
         </div>
         <Table dataSource={dataSourcePersonnelD} columns={columnsPersonnelD}></Table>
       </div>
-      <Modal title='Оформление нового счёта' open={open} onOk={handleOk} onCancel={handleCancel}>
+      <Modal title='Оформление нового счёта' open={open} onCancel={handleCancel} footer={false}>
         <Form {...layout} form={form} name='control-hooks' onFinish={onFinish}>
 
           <Form.Item name="fcs" label="ФИО" rules={[{ required: true }]}>
@@ -97,14 +89,14 @@ const PersonnelDepartment = () => {
               <Option value="female">Женщина</Option>
             </Select>
           </Form.Item>
-          <Form.Item name="telefon" label="Телефон">
+          <Form.Item name="telefon" label="Телефон" rules={[{ required: true }]}>
             <Input placeholder='Номер телефона сотрудника' />
           </Form.Item>
-          <Form.Item name="salar" label="Зарплата">
+          <Form.Item name="salar" label="Зарплата" rules={[{ required: true }]}>
             <Input placeholder='Заработная плата' />
           </Form.Item>
-          <Form.Item>
-            <Button type='primary' htmlType='submit'>asfs</Button>
+          <Form.Item style={{display: 'flex', justifyContent: 'flex-end'}}>
+            <Button type='primary' htmlType='submit'>Добавить</Button>
           </Form.Item>
         </Form>
       </Modal>

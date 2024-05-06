@@ -20,12 +20,7 @@ const finReportPAges = () => {
         setOpen(true)
     }
 
-    const handleOk = (values) => {
-
-    }
-
     const onFinish = (values) => {
-        console.log(values)
         dataSourceReport.push(
             {
                 'key': (dataSourceReport.length + 1).toString(),
@@ -70,7 +65,7 @@ const finReportPAges = () => {
                 </div>
                 <Table dataSource={dataSourceReport} columns={columnsReport}></Table>
             </div>
-            <Modal title='Оформление нового счёта' open={open} onOk={handleOk} onCancel={handleCancel}>
+            <Modal title='Оформление нового счёта' open={open} onCancel={handleCancel} footer={false}>
                 <Form {...layout} form={form} name='control-hooks' onFinish={onFinish}>
                     <Form.Item name="position" label="Позиция" rules={[{ required: true }]}>
                         <Input placeholder='Позиция' />
@@ -81,8 +76,8 @@ const finReportPAges = () => {
                     <Form.Item name="symma" label="Номер заказа" rules={[{ required: true }]}>
                         <Input placeholder='Сумма, р.' />
                     </Form.Item>
-                    <Form.Item>
-                        <Button type='primary' htmlType='submit'>asfs</Button>
+                    <Form.Item style={{display: 'flex', justifyContent: 'flex-end'}}>
+                        <Button type='primary' htmlType='submit'>Добавить</Button>
                     </Form.Item>
                 </Form>
             </Modal>

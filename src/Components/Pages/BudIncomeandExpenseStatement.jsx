@@ -1,9 +1,7 @@
-import { Breadcrumb, theme, Table, Space, Typography, Button, Modal, Form, Input, DatePicker, Select, InputNumber } from 'antd';
-import React, { useState } from 'react'
-import { columnsExpenseIncome, columnsFinPlanning, columnsPersonnelD, dataSourceExpenseIncome, dataSourceFinPlanning, dataSourcePersonnelD } from '../../data';
-import { genderVerif, periodVerif, typeOperationVerif } from '../unitls';
+import { Breadcrumb, theme, Space, Typography } from 'antd';
+import React from 'react'
+import { dataSourceExpenseIncome } from '../../data';
 import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from 'recharts';
-import TextArea from 'antd/es/input/TextArea';
 
 const BudIncomeandExpenseStatement = () => {
 
@@ -23,8 +21,6 @@ const BudIncomeandExpenseStatement = () => {
   } = theme.useToken();
 
   const forDiagrama = (values) => {
-    var doxod = 0
-    var razhod = 0
     values.forEach(el => {
       if (el.symma < 0) {
         doxodRazhod[1].razhod -= el.symma
@@ -35,8 +31,7 @@ const BudIncomeandExpenseStatement = () => {
     });
   }
 
-  console.log(forDiagrama(dataSourceExpenseIncome))
-  console.log(doxodRazhod)
+  forDiagrama(dataSourceExpenseIncome)
 
   return (
     <>
@@ -53,7 +48,7 @@ const BudIncomeandExpenseStatement = () => {
           <Typography.Text> Отчёт о доходах и расходах — это документ, который показывает финансовые результаты деятельности компании за определённый период.<br /></Typography.Text>
           <Typography.Text> Отчёт о доходах и расходах является важным инструментом для анализа финансового состояния компании и принятия управленческих решений. Он позволяет оценить эффективность деятельности компании, выявить проблемные области и определить перспективы развития.<br /></Typography.Text>
         </div>
-        <div style={{ display: 'flex', justifyContent: 'center'}}>
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
           <BarChart data={doxodRazhod} width={600} height={300}>
             <XAxis dataKey='name' stroke='#8884d8' />
             <YAxis />

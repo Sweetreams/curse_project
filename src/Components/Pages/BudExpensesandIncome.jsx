@@ -1,12 +1,10 @@
-import { Breadcrumb, theme, Table, Space, Typography, Button, Modal, Form, Input, DatePicker, Select, InputNumber } from 'antd';
+import { Breadcrumb, theme, Table, Space, Typography, Button, Modal, Form, Input, DatePicker, InputNumber } from 'antd';
 import React, { useState } from 'react'
-import { columnsExpenseIncome, columnsFinPlanning, columnsPersonnelD, dataSourceExpenseIncome, dataSourceFinPlanning, dataSourcePersonnelD } from '../../data';
-import { genderVerif, periodVerif, typeOperationVerif } from '../unitls';
-import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from 'recharts';
+import { columnsExpenseIncome, dataSourceExpenseIncome } from '../../data';
 import TextArea from 'antd/es/input/TextArea';
 
 const BudExpensesandIncome = () => {
-  
+
   const [open, setOpen] = useState(false)
   const [form] = Form.useForm()
 
@@ -27,12 +25,7 @@ const BudExpensesandIncome = () => {
     setOpen(true)
   }
 
-  const handleOk = (values) => {
-
-  }
-
   const onFinish = (values) => {
-    console.log(values)
     dataSourceExpenseIncome.push(
       {
         'key': (dataSourceExpenseIncome.length + 1).toString(),
@@ -70,7 +63,7 @@ const BudExpensesandIncome = () => {
         </div>
         <Table dataSource={dataSourceExpenseIncome} columns={columnsExpenseIncome}></Table>
       </div>
-      <Modal title='Оформление нового счёта' open={open} onOk={handleOk} onCancel={handleCancel}>
+      <Modal title='Оформление нового счёта' open={open} onCancel={handleCancel} footer={false}>
         <Form {...layout} form={form} name='control-hooks' onFinish={onFinish}>
           <Form.Item name="statiya" label="Название статьи" rules={[{ required: true }]}>
             <Input placeholder='Название статьи' />
@@ -82,10 +75,10 @@ const BudExpensesandIncome = () => {
             <DatePicker placeholder='Дата' />
           </Form.Item>
           <Form.Item name="comment" label="Комментарий" rules={[{ required: true }]}>
-            <TextArea placeholder='Комментарий'/>
+            <TextArea placeholder='Комментарий' />
           </Form.Item>
-          <Form.Item>
-            <Button type='primary' htmlType='submit'>asfs</Button>
+          <Form.Item style={{ display: 'flex', justifyContent: 'flex-end' }}>
+            <Button type='primary' htmlType='submit'>Добавить</Button>
           </Form.Item>
         </Form>
       </Modal>

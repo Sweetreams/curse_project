@@ -40,3 +40,15 @@ export const periodVerif = (values) => {
     return 'Год'
   }
 }
+
+export const typeOperationTecWareVerif = (values) => {
+  if(values === 'sale'){
+    return 'Продажа'
+  }
+  else if(values === 'going'){
+    return 'Приход'
+  }
+  else {
+    return 'Корректировка'
+  }
+}

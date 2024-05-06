@@ -1,8 +1,7 @@
 import { Breadcrumb, theme, Table, Space, Typography, Button, Modal, Form, Input, DatePicker, Select } from 'antd';
 import React, { useState } from 'react'
-import { columnsFinPlanning, columnsPersonnelD, dataSourceFinPlanning, dataSourcePersonnelD } from '../../data';
-import { genderVerif, periodVerif, typeOperationVerif } from '../unitls';
-import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from 'recharts';
+import { columnsFinPlanning, dataSourceFinPlanning } from '../../data';
+import { periodVerif, typeOperationVerif } from '../unitls';
 import TextArea from 'antd/es/input/TextArea';
 
 const BudFinancialPlanning = () => {
@@ -27,12 +26,7 @@ const BudFinancialPlanning = () => {
     setOpen(true)
   }
 
-  const handleOk = (values) => {
-
-  }
-
   const onFinish = (values) => {
-    console.log(values)
     dataSourceFinPlanning.push(
       {
         'key': (dataSourceFinPlanning.length + 1).toString(),
@@ -78,7 +72,7 @@ const BudFinancialPlanning = () => {
         </div>
         <Table dataSource={dataSourceFinPlanning} columns={columnsFinPlanning}></Table>
       </div>
-      <Modal title='Оформление нового счёта' open={open} onOk={handleOk} onCancel={handleCancel}>
+      <Modal title='Оформление нового счёта' open={open} onCancel={handleCancel} footer={false}>
         <Form {...layout} form={form} name='control-hooks' onFinish={onFinish}>
           <Form.Item name="statiya" label="Название статьи" rules={[{ required: true }]}>
             <Input placeholder='Название статьи' />
@@ -90,7 +84,7 @@ const BudFinancialPlanning = () => {
             <DatePicker placeholder='Дата' />
           </Form.Item>
           <Form.Item name="period" label="Период" rules={[{ required: true }]}>
-          <Select placeholder='Период'>
+            <Select placeholder='Период'>
               <Option value="day">День</Option>
               <Option value="week">Неделя</Option>
               <Option value="month">Месяц</Option>
@@ -99,22 +93,22 @@ const BudFinancialPlanning = () => {
             </Select>
           </Form.Item>
           <Form.Item name="comment" label="Комментарий" rules={[{ required: true }]}>
-            <TextArea placeholder='Комментарий'/>
+            <TextArea placeholder='Комментарий' />
           </Form.Item>
-          <Form.Item name="typeoperation" label="Тип операции">
-          <Select placeholder='Тип операции'>
+          <Form.Item name="typeoperation" label="Тип операции" rules={[{ required: true }]}>
+            <Select placeholder='Тип операции'>
               <Option value="doxod">Доход</Option>
               <Option value="razxod">Расход</Option>
             </Select>
           </Form.Item>
-          <Form.Item name="prognoz" label="Прогноз, р.">
-            <Input placeholder='Прогноз'/>
+          <Form.Item name="prognoz" label="Прогноз, р." rules={[{ required: true }]}>
+            <Input placeholder='Прогноз' />
           </Form.Item>
-          <Form.Item name="fact" label="Факт, р.">
-            <Input placeholder='Факт'/>
+          <Form.Item name="fact" label="Факт, р." rules={[{ required: true }]}>
+            <Input placeholder='Факт' />
           </Form.Item>
-          <Form.Item>
-            <Button type='primary' htmlType='submit'>asfs</Button>
+          <Form.Item style={{ display: 'flex', justifyContent: 'flex-end' }}>
+            <Button type='primary' htmlType='submit'>Добавить</Button>
           </Form.Item>
         </Form>
       </Modal>
