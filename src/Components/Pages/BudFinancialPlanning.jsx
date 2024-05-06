@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { columnsFinPlanning, dataSourceFinPlanning } from '../../data';
 import { periodVerif, typeOperationVerif } from '../unitls';
 import TextArea from 'antd/es/input/TextArea';
+import { DownloadOutlined } from '@ant-design/icons';
 
 const BudFinancialPlanning = () => {
 
@@ -24,6 +25,10 @@ const BudFinancialPlanning = () => {
 
   const openModalMenu = () => {
     setOpen(true)
+  }
+
+  const toPrint = () => {
+    print()
   }
 
   const onFinish = (values) => {
@@ -58,6 +63,7 @@ const BudFinancialPlanning = () => {
         <Space align='center' style={{ marginBottom: 40, gap: 30 }}>
           <Typography.Title level={2}>Финансовое планирование</Typography.Title>
           <Button type='primary' onClick={openModalMenu}>Добавить поле</Button>
+          <Button type="primary" icon={<DownloadOutlined />} onClick={toPrint} ></Button>
         </Space>
         <div style={{ padding: 24, marginBottom: 40, background: '#f0f0f0', borderRadius: borderRadiusLG }}>
           <Typography.Text>Раздел «Финансовое планирование» в ERP-системе представляет собой инструмент для управления финансовыми ресурсами компании. Он позволяет анализировать, планировать и контролировать доходы и расходы, а также прогнозировать финансовые результаты:<br /></Typography.Text>

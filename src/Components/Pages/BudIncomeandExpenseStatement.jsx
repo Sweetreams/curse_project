@@ -1,7 +1,8 @@
-import { Breadcrumb, theme, Space, Typography } from 'antd';
+import { Breadcrumb, theme, Space, Typography, Button } from 'antd';
 import React from 'react'
 import { dataSourceExpenseIncome } from '../../data';
 import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from 'recharts';
+import { DownloadOutlined } from '@ant-design/icons';
 
 const BudIncomeandExpenseStatement = () => {
 
@@ -15,6 +16,10 @@ const BudIncomeandExpenseStatement = () => {
       razhod: 0,
     },
   ]
+
+  const toPrint = () => {
+    print()
+  }
 
   const {
     token: { colorBgContainer, borderRadiusLG },
@@ -43,6 +48,7 @@ const BudIncomeandExpenseStatement = () => {
       <div style={{ padding: 24, minHeight: 360, background: colorBgContainer, borderRadius: borderRadiusLG }}>
         <Space align='center' style={{ marginBottom: 40, gap: 30 }}>
           <Typography.Title level={2}>Отчёт о доходах и расходов</Typography.Title>
+          <Button type="primary" icon={<DownloadOutlined />} onClick={toPrint} ></Button>
         </Space>
         <div style={{ padding: 24, marginBottom: 40, background: '#f0f0f0', borderRadius: borderRadiusLG }}>
           <Typography.Text> Отчёт о доходах и расходах — это документ, который показывает финансовые результаты деятельности компании за определённый период.<br /></Typography.Text>

@@ -2,6 +2,7 @@ import { Breadcrumb, Button, Form, Input, Modal, Space, Table, Typography, theme
 import React, { useState } from 'react'
 import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from 'recharts';
 import { columnsReport, dataSourceReport } from '../../data';
+import { DownloadOutlined } from '@ant-design/icons';
 
 const finReportPAges = () => {
     const [open, setOpen] = useState(false)
@@ -14,6 +15,10 @@ const finReportPAges = () => {
         wrapperCol: {
             span: 16,
         },
+    }
+
+    const toPrint =() => {
+        print()
     }
 
     const openModalMenu = () => {
@@ -51,6 +56,7 @@ const finReportPAges = () => {
                 <Space align='center' style={{ marginBottom: 40, gap: 30 }}>
                     <Typography.Title level={2}>Отчёт по позициям</Typography.Title>
                     <Button type='primary' onClick={openModalMenu}>Добавить поле</Button>
+                    <Button type="primary" icon={<DownloadOutlined />} onClick={toPrint} ></Button>
                 </Space>
                 <div style={{ padding: 24, marginBottom: 40, background: '#f0f0f0', borderRadius: borderRadiusLG }}>
                     <Typography.Text>Отчёты по позициям предоставляют пользователям информацию о текущем состоянии запасов, их движении и использовании. Эти отчёты помогают в принятии обоснованных решений о закупках, контроле за остатками и оптимизации складских операций.<br /></Typography.Text>

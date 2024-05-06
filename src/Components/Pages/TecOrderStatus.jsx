@@ -1,6 +1,7 @@
 import { Breadcrumb, Button, Space, Table, Typography, theme } from 'antd';
 import React from 'react'
 import { columnsTecStat, dataSourceTecStat } from '../../data';
+import { DownloadOutlined } from '@ant-design/icons';
 
 const TecOrderStatus = () => {
   
@@ -11,6 +12,10 @@ const TecOrderStatus = () => {
     wrapperCol: {
       span: 16,
     },
+  }
+
+  const toPrint = () => {
+    print()
   }
 
   const {
@@ -26,6 +31,7 @@ const TecOrderStatus = () => {
       <div style={{ padding: 24, minHeight: 360, background: colorBgContainer, borderRadius: borderRadiusLG }}>
         <Space align='center' style={{ marginBottom: 40, gap: 30 }}>
           <Typography.Title level={2}>Статусы заказа</Typography.Title>
+          <Button type="primary" icon={<DownloadOutlined />} onClick={toPrint} ></Button>
         </Space>
         <Table dataSource={dataSourceTecStat} columns={columnsTecStat}></Table>
       </div>

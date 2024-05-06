@@ -1,6 +1,7 @@
 import { Breadcrumb, theme, Table, Space, Typography, Button, Modal, Form, Input, Checkbox, DatePicker } from 'antd';
 import React, { useState } from 'react'
-import { columnsAccount, dataSourceAccount} from '../../data';
+import { columnsAccount, dataSourceAccount } from '../../data';
+import { DownloadOutlined, SearchOutlined } from '@ant-design/icons';
 
 const finAccountsPages = () => {
     const [open, setOpen] = useState(false)
@@ -21,6 +22,10 @@ const finAccountsPages = () => {
 
     const openModalMenu = () => {
         setOpen(true)
+    }
+
+    const toPrint =() => {
+        print()
     }
 
     const onFinish = (values) => {
@@ -54,6 +59,7 @@ const finAccountsPages = () => {
                 <Space align='center' style={{ marginBottom: 40, gap: 30 }}>
                     <Typography.Title level={2}>Счета</Typography.Title>
                     <Button type='primary' onClick={openModalMenu}>Добавить поле</Button>
+                    <Button type="primary" icon={<DownloadOutlined />} onClick={toPrint} ></Button>
                 </Space>
                 <div style={{ padding: 24, marginBottom: 40, background: '#f0f0f0', borderRadius: borderRadiusLG }}>
                     <Typography.Text>Счета содержат в себе информацию о финансовых операциях компании. Они включают в себя следующие данные:<br /></Typography.Text>
@@ -65,7 +71,7 @@ const finAccountsPages = () => {
                     <Typography.Text> <strong>— Сумма счёта</strong> — сумма счета. <br /></Typography.Text>
                     <Typography.Text> <strong>— Отгружен</strong> — статус отгрузки товара по счету. <br /></Typography.Text>
                 </div>
-                <Table dataSource={dataSourceAccount} columns={columnsAccount}></Table>
+                <Table className='tbn' dataSource={dataSourceAccount} columns={columnsAccount}></Table>
             </div>
             <Modal title='Оформление нового счёта' open={open} onCancel={handleCancel} footer={false}>
                 <Form {...layout} form={form} name='control-hooks' onFinish={onFinish}>
@@ -87,7 +93,7 @@ const finAccountsPages = () => {
                     <Form.Item name="otgruz" label="Отгружен">
                         <Checkbox />
                     </Form.Item>
-                    <Form.Item style={{display: 'flex', justifyContent: 'flex-end'}}>
+                    <Form.Item style={{ display: 'flex', justifyContent: 'flex-end' }}>
                         <Button type='primary' htmlType='submit'>Добавить</Button>
                     </Form.Item>
                 </Form>

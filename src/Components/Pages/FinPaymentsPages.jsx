@@ -1,6 +1,7 @@
 import { Breadcrumb, Button, Checkbox, DatePicker, Form, Input, Modal, Space, Table, Typography, theme } from 'antd';
 import React, { useState } from 'react'
 import { columnsPayments, dataSourcePayments } from '../../data';
+import { DownloadOutlined } from '@ant-design/icons';
 
 const finPaymentsPages = () => {
     const [open, setOpen] = useState(false)
@@ -13,6 +14,7 @@ const finPaymentsPages = () => {
     const openModalMenu = () => {
         setOpen(true)
     }
+    
 
     const layout = {
         labelCol: {
@@ -21,6 +23,10 @@ const finPaymentsPages = () => {
         wrapperCol: {
             span: 16,
         },
+    }
+
+    const toPrint =() => {
+        print()
     }
 
     const handleOk = (values) => {
@@ -52,6 +58,7 @@ const finPaymentsPages = () => {
                 <Space align='center' style={{ marginBottom: 40, gap: 30 }}>
                     <Typography.Title level={2}>Оплаты</Typography.Title>
                     <Button type='primary' onClick={openModalMenu}>Добавить поле</Button>
+                    <Button type="primary" icon={<DownloadOutlined />} onClick={toPrint} ></Button>
                 </Space>
                 <Table dataSource={dataSourcePayments} columns={columnsPayments}></Table>
             </div>

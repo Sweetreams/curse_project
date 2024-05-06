@@ -2,6 +2,7 @@ import { Breadcrumb, theme, Table, Space, Typography, Button, Modal, Form, Input
 import React, { useState } from 'react'
 import { columnsPersonnelD, dataSourcePersonnelD } from '../../data';
 import { genderVerif } from '../unitls';
+import { DownloadOutlined } from '@ant-design/icons';
 
 const PersonnelDepartment = () => {
 
@@ -15,6 +16,10 @@ const PersonnelDepartment = () => {
     wrapperCol: {
       span: 16,
     },
+  }
+
+  const toPrint = () => {
+    print()
   }
 
   const {
@@ -55,6 +60,7 @@ const PersonnelDepartment = () => {
         <Space align='center' style={{ marginBottom: 40, gap: 30 }}>
           <Typography.Title level={2}>Управление кадрами</Typography.Title>
           <Button type='primary' onClick={openModalMenu}>Добавить поле</Button>
+          <Button type="primary" icon={<DownloadOutlined />} onClick={toPrint} ></Button>
         </Space>
         <div style={{ padding: 24, marginBottom: 40, background: '#f0f0f0', borderRadius: borderRadiusLG }}>
           <Typography.Text>Счета содержат в себе информацию о финансовых операциях компании. Они включают в себя следующие данные:<br /></Typography.Text>
@@ -95,7 +101,7 @@ const PersonnelDepartment = () => {
           <Form.Item name="salar" label="Зарплата" rules={[{ required: true }]}>
             <Input placeholder='Заработная плата' />
           </Form.Item>
-          <Form.Item style={{display: 'flex', justifyContent: 'flex-end'}}>
+          <Form.Item style={{ display: 'flex', justifyContent: 'flex-end' }}>
             <Button type='primary' htmlType='submit'>Добавить</Button>
           </Form.Item>
         </Form>

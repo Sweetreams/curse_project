@@ -2,6 +2,7 @@ import { Breadcrumb, theme, Table, Space, Typography, Button, Modal, Form, Input
 import React, { useState } from 'react'
 import { columnsTecWare, dataSourceTecWare } from '../../data';
 import { typeOperationTecWareVerif } from '../unitls';
+import { DownloadOutlined } from '@ant-design/icons';
 
 const TecWarehouse = () => {
 
@@ -15,6 +16,10 @@ const TecWarehouse = () => {
     wrapperCol: {
       span: 16,
     },
+  }
+
+  const toPrint = () => {
+    print()
   }
 
   const {
@@ -54,6 +59,7 @@ const TecWarehouse = () => {
         <Space align='center' style={{ marginBottom: 40, gap: 30 }}>
           <Typography.Title level={2}>Движение по складу</Typography.Title>
           <Button type='primary' onClick={openModalMenu}>Добавить поле</Button>
+          <Button type="primary" icon={<DownloadOutlined />} onClick={toPrint} ></Button>
         </Space>
         <Table dataSource={dataSourceTecWare} columns={columnsTecWare}></Table>
       </div>

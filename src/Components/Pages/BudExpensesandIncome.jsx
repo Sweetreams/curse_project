@@ -2,6 +2,7 @@ import { Breadcrumb, theme, Table, Space, Typography, Button, Modal, Form, Input
 import React, { useState } from 'react'
 import { columnsExpenseIncome, dataSourceExpenseIncome } from '../../data';
 import TextArea from 'antd/es/input/TextArea';
+import { DownloadOutlined } from '@ant-design/icons';
 
 const BudExpensesandIncome = () => {
 
@@ -23,6 +24,10 @@ const BudExpensesandIncome = () => {
 
   const openModalMenu = () => {
     setOpen(true)
+  }
+
+  const toPrint = () => {
+    print()
   }
 
   const onFinish = (values) => {
@@ -53,6 +58,7 @@ const BudExpensesandIncome = () => {
         <Space align='center' style={{ marginBottom: 40, gap: 30 }}>
           <Typography.Title level={2}>Расходы и доходы</Typography.Title>
           <Button type='primary' onClick={openModalMenu}>Добавить поле</Button>
+          <Button type="primary" icon={<DownloadOutlined />} onClick={toPrint} ></Button>
         </Space>
         <div style={{ padding: 24, marginBottom: 40, background: '#f0f0f0', borderRadius: borderRadiusLG }}>
           <Typography.Text>Раздел «доходов и расходов» в ERP-системе представляет собой инструмент для учёта, анализа и контроля финансовых операций компании. Он позволяет отслеживать все поступления и траты, связанные с основной деятельностью предприятия.<br /></Typography.Text>

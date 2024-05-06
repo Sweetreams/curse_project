@@ -1,3 +1,4 @@
+import { DownloadOutlined } from '@ant-design/icons';
 import { Breadcrumb, Button, Card, Col, Flex, Row, Space, Typography, theme } from 'antd'
 import React from 'react'
 
@@ -6,6 +7,10 @@ const FinOrderPages = () => {
     const {
         token: { colorBgContainer, borderRadiusLG },
     } = theme.useToken();
+
+    const toPrint =() => {
+        print()
+    }
 
     return (
         <>
@@ -16,6 +21,7 @@ const FinOrderPages = () => {
             <div style={{ padding: 24, minHeight: 360, background: colorBgContainer, borderRadius: borderRadiusLG }}>
                 <Space align='center' style={{ marginBottom: 40, gap: 30 }}>
                     <Typography.Title level={2}>Заказы</Typography.Title>
+                    <Button type="primary" icon={<DownloadOutlined />} onClick={toPrint} ></Button>
                 </Space>
                 <div style={{ padding: 24, marginBottom: 40, background: '#f0f0f0', borderRadius: borderRadiusLG }}>
                     <Typography.Text>Управление финансами - Возможности системы управления финансов для их учёта.<br /></Typography.Text>
