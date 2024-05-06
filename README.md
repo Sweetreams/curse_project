@@ -1,6 +1,6 @@
 # ERP - WorkMe
 
-https://curse-project.vercel.app/mainpage
+https://curse-project.vercel.app
 
 ## Описание
 
