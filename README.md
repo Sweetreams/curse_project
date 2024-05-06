@@ -1,8 +1,21 @@
 # ERP - WorkMe
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Описание
 
-Currently, two official plugins are available:
+описание (заголовок второго уровня) — краткое описание продукта, в котором можно ответить на вопросы 1, 2 и 3 из списка вопросов выше;
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Установка
+
+установка (заголовок второго уровня) — описание процесса установки продукта (вопрос 4);
+
+## Использование
+
+использование (заголовок второго уровня) — описание процесса использования продукта (вопрос 5);
+
+## Разработка
+
+разработка (заголовок второго уровня) — описание процесса того, как принять участие в разработке проекта или запрет на это (вопрос 6);
+
+## Участиники
+
+участники (заголовок второго уровня) — перечисление всех, кто принимал или принимает участие в разработке продукта (вопрос 7).
