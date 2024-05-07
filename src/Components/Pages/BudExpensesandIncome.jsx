@@ -61,7 +61,7 @@ const BudExpensesandIncome = () => {
           <Button type="primary" icon={<DownloadOutlined />} onClick={toPrint} ></Button>
         </Space>
         <div style={{ padding: 24, marginBottom: 40, background: '#f0f0f0', borderRadius: borderRadiusLG }}>
-          <Typography.Text>Раздел «доходов и расходов» в ERP-системе представляет собой инструмент для учёта, анализа и контроля финансовых операций компании. Он позволяет отслеживать все поступления и траты, связанные с основной деятельностью предприятия.<br /></Typography.Text>
+          <Typography.Text>Раздел «доходов и расходов» в MES-системе представляет собой инструмент для учёта, анализа и контроля финансовых операций компании. Он позволяет отслеживать все поступления и траты, связанные с основной деятельностью предприятия.<br /></Typography.Text>
           <Typography.Text> <strong>— Название статьи </strong> — наименование статьи, по которой происходит движение денежных средств.<br /></Typography.Text>
           <Typography.Text> <strong>— Сумма, р. </strong> — величина денежных средств, которая была потрачена или получена.<br /></Typography.Text>
           <Typography.Text> <strong>— Дата </strong> — день, когда произошло движение денежных средств.<br /></Typography.Text>
