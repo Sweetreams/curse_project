@@ -66,7 +66,7 @@ const BudFinancialPlanning = () => {
           <Button type="primary" icon={<DownloadOutlined />} onClick={toPrint} ></Button>
         </Space>
         <div style={{ padding: 24, marginBottom: 40, background: '#f0f0f0', borderRadius: borderRadiusLG }}>
-          <Typography.Text>Раздел «Финансовое планирование» в ERP-системе представляет собой инструмент для управления финансовыми ресурсами компании. Он позволяет анализировать, планировать и контролировать доходы и расходы, а также прогнозировать финансовые результаты:<br /></Typography.Text>
+          <Typography.Text>Раздел «Финансовое планирование» в MES-системе представляет собой инструмент для управления финансовыми ресурсами компании. Он позволяет анализировать, планировать и контролировать доходы и расходы, а также прогнозировать финансовые результаты:<br /></Typography.Text>
           <Typography.Text> <strong>— Название статьи </strong> — наименование статьи, по которой происходит движение денежных средств.<br /></Typography.Text>
           <Typography.Text> <strong>— Сумма, р. </strong> величина денежных средств, которая была потрачена или получена.<br /></Typography.Text>
           <Typography.Text> <strong>— Дата </strong> — день, когда произошло движение денежных средств.<br /></Typography.Text>
