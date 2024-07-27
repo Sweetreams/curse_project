@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 
 export const items = [
   getItem('Управление финансами', '1', <FolderOutlined />, [
-    getItem(<Link to='financialManager/Orders'>{'Заказы'}</Link>, '2', <PlusCircleOutlined />),
+    getItem(<Link to='financialManager/Orders'>{'Заказыfdgfd'}</Link>, '2', <PlusCircleOutlined />),
     getItem(<Link to='financialManager/Accounts'>{'Счёта'}</Link>, '3', <PlusCircleOutlined />),
     getItem(<Link to='financialManager/Payments'>{'Оплаты'}</Link>, '4', <TableOutlined />),
     getItem(<Link to='financialManager/Report'>{'Отчёт по позициям'}</Link>, '5', <CheckCircleOutlined />),
